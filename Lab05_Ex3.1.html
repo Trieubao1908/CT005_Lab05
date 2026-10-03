@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lợi ích của công nghệ số - Võ Triệu Bảo</title>
+    <title>Sơ Đồ Liên Kết Giá Trị Công Nghệ Số - Triệu Bảo</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,16 +26,16 @@
                     },
                     animation: {
                         'pulse-glow': 'pulseGlow 3s infinite alternate',
-                        'scanline': 'scanline 8s linear infinite',
+                        'dash-flow': 'dashFlow 2s linear infinite'
                     },
                     keyframes: {
                         pulseGlow: {
                             '0%': { boxShadow: '0 0 15px rgba(0, 240, 255, 0.2)' },
                             '100%': { boxShadow: '0 0 30px rgba(168, 85, 247, 0.5)' }
                         },
-                        scanline: {
-                            '0%': { transform: 'translateY(-100%)' },
-                            '100%': { transform: 'translateY(1000%)' }
+                        dashFlow: {
+                            '0%': { backgroundPosition: '0 0' },
+                            '100%': { backgroundPosition: '20px 0' }
                         }
                     }
                 }
@@ -46,10 +46,10 @@
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom CSS for Cyber/Glassmorphism Effects -->
+    <!-- Custom CSS -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -75,18 +75,19 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glass-card-hover:hover {
-            border-color: rgba(0, 240, 255, 0.4);
+            border-color: rgba(0, 240, 255, 0.5);
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px 0 rgba(0, 240, 255, 0.15);
+            box-shadow: 0 12px 40px 0 rgba(0, 240, 255, 0.25);
         }
 
-        /* Button Hover Enhancements */
-        .cyber-btn {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .cyber-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+        .youtube-embed {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+            background: #020817;
         }
 
         /* Cyber Glow Border */
@@ -106,6 +107,13 @@
         }
         .neon-border:hover::before {
             opacity: 1;
+        }
+
+        /* Connecting Line Animation */
+        .connecting-line-v {
+            width: 2px;
+            background: linear-gradient(to bottom, #00f0ff, #a855f7, #ec4899);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
         }
 
         /* Custom Scrollbar */
@@ -135,36 +143,44 @@
         <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f293710_1px,transparent_1px),linear-gradient(to_bottom,#1f293710_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
     </div>
 
-    <!-- ===== HEADER / NAVIGATION ===== -->
+    <!-- ===== HEADER / NAVIGATION WITH CÁCH ĐIỆU TRIỆU BẢO ===== -->
     <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 px-4 lg:px-8 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
+            
+            <!-- BRANDING: TRIỆU BẢO CÁCH ĐIỆU -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyber-cyan to-cyber-purple p-0.5 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                    <div class="w-full h-full bg-cyber-bg rounded-[10px] flex items-center justify-center">
-                        <i class="fa-solid fa-atom text-cyber-cyan group-hover:animate-spin"></i>
+                <div class="relative w-11 h-11 rounded-xl bg-gradient-to-tr from-cyber-cyan via-cyber-purple to-cyber-pink p-[2px] flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
+                    <div class="w-full h-full bg-cyber-bg rounded-[10px] flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cyber-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <i class="fa-solid fa-microchip text-cyber-cyan text-lg group-hover:scale-110 transition-transform"></i>
                     </div>
                 </div>
-                <span class="font-orbitron font-bold text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-white to-cyber-purple">
-                    TRIỆU BẢO<span class="text-xs text-cyber-cyan ml-1 font-mono">[3.0]</span>
-                </span>
+                
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-1.5">
+                        <span class="font-orbitron font-black text-2xl tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-white to-cyber-purple drop-shadow-[0_0_12px_rgba(0,240,255,0.4)]">
+                            TRIỆU BẢO
+                        </span>
+                        <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyber-cyan/20 border border-cyber-cyan/40 text-cyber-cyan font-semibold">
+                            PRO
+                        </span>
+                    </div>
+                    <span class="text-[9px] font-mono tracking-widest text-slate-400 uppercase -mt-1">Digital Ecosystem</span>
+                </div>
             </a>
 
             <!-- Navigation Links -->
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
+            <nav class="flex items-center gap-6 sm:gap-8 font-medium text-sm text-slate-300">
+                <a href="#diagram" class="hover:text-cyber-cyan transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-diagram-project text-xs text-cyber-cyan"></i> Sơ Đồ Lợi Ích
+                </a>
                 <a href="#infographic" class="hover:text-cyber-cyan transition-colors flex items-center gap-2">
-                    <i class="fa-solid fa-[#00f0ff] fa-image text-xs text-cyber-cyan"></i> Infographic
+                    <i class="fa-solid fa-image text-xs text-cyber-cyan"></i> Infographic
                 </a>
                 <a href="#video" class="hover:text-cyber-purple transition-colors flex items-center gap-2">
-                    <i class="fa-solid fa-play text-xs text-cyber-purple"></i> Video Youtube
-                </a>
-                <a href="#author" class="hover:text-cyber-pink transition-colors flex items-center gap-2">
-                    <i class="fa-solid fa-user-astronaut text-xs text-cyber-pink"></i> Tác Giả
+                    <i class="fa-solid fa-play text-xs text-cyber-purple"></i> Video YouTube
                 </a>
             </nav>
-
-            <a href="#author" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-orbitron font-semibold uppercase tracking-wider bg-gradient-to-r from-cyber-cyan/20 to-cyber-purple/20 border border-cyber-cyan/40 text-cyber-cyan hover:bg-cyber-cyan hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,240,255,0.2)] cyber-btn">
-                <i class="fa-solid fa-address-card"></i> Profile
-            </a>
         </div>
     </header>
 
@@ -175,16 +191,270 @@
         <div class="text-center space-y-4 max-w-3xl mx-auto">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/30 text-cyber-cyan text-xs font-mono uppercase tracking-widest">
                 <span class="w-2 h-2 rounded-full bg-cyber-cyan animate-ping"></span>
-                Cyber Interactive Hub
+                Network Architecture • Triệu Bảo
             </div>
-            <!-- CHỈNH SỬA: "LỢI ÍCH CỦA" màu trắng, "NỘI DUNG SỐ" giữ hiệu ứng gradient -->
             <h1 class="font-orbitron text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-                <span class="text-white">LỢI ÍCH CỦA</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-cyber-purple to-cyber-pink">NỘI DUNG SỐ</span>
+                <span class="text-white">SƠ ĐỒ LIÊN KẾT</span> <br class="sm:hidden" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-cyber-purple to-cyber-pink">CÔNG NGHỆ SỐ</span>
             </h1>
             <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                Nền tảng hiển thị nội dung Infographic tương tác cao và Video Stream chất lượng cao với giao diện phong cách tương lai.
+                Mạng lưới liên kết 7 lợi ích theo thứ tự chuẩn hóa từ <strong class="text-cyber-cyan">1 đến 7</strong>, thể hiện sự tương tác hữu cơ qua từng giai đoạn phát triển.
             </p>
         </div>
+
+        <!-- ===== KHU VỰC SƠ ĐỒ MẠNG LƯỚI LIÊN KẾT (MINDMAP DIAGRAM) ===== -->
+        <section id="diagram" class="scroll-mt-24 space-y-12">
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-4 gap-2">
+                <div>
+                    <h2 class="font-orbitron text-2xl font-bold text-white flex items-center gap-3">
+                        <i class="fa-solid fa-network-wired text-cyber-cyan"></i> Sơ Đồ Mạng Lưới Giá Trị Liền Mạch
+                    </h2>
+                    <p class="text-slate-400 text-xs mt-1">Các sợi dây liên kết thể hiện dòng chảy thông tin và tác động giữa các nút lợi ích</p>
+                </div>
+                <span class="self-start sm:self-auto px-3 py-1 rounded-md bg-cyber-cyan/10 border border-cyber-cyan/30 text-cyber-cyan text-xs font-mono">
+                    Interconnected Nodes 1-7
+                </span>
+            </div>
+
+            <!-- CORE CENTER NODE (HẠT NHÂN TRUNG TÂM) -->
+            <div class="flex justify-center relative my-6">
+                <div class="relative group cursor-pointer z-20">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-cyber-cyan via-cyber-purple to-cyber-pink rounded-full blur-md opacity-80 group-hover:opacity-100 transition duration-500 animate-pulse-glow"></div>
+                    <div class="relative px-8 py-5 rounded-full bg-slate-950 border border-cyber-cyan/60 flex flex-col items-center text-center space-y-1 shadow-2xl">
+                        <div class="flex items-center gap-2 text-cyber-cyan text-xs font-mono tracking-widest uppercase">
+                            <i class="fa-solid fa-atom animate-spin"></i> TRIỆU BẢO NETWORK
+                        </div>
+                        <div class="font-orbitron font-black text-lg sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-white to-cyber-pink tracking-wider">
+                            CÔNG NGHỆ SỐ KIẾN TẠO TƯƠNG LAI
+                        </div>
+                        <div class="text-[11px] text-slate-400 font-mono">Flow Process: Nodes 1 ➔ 7</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SƠ ĐỒ CÓ CÁC DÂY LIÊN KẾT RÕ RÀNG -->
+            <div class="relative space-y-12">
+
+                <!-- TẦNG 1: KHỞI TẠO HẠ TẦNG (Nodes 1, 2) -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-xs font-mono text-cyber-cyan uppercase tracking-widest">
+                        <span class="px-2 py-0.5 rounded bg-cyber-cyan/10 border border-cyber-cyan/30">Giai Đoạn 01</span>
+                        <span>Nền Tảng Kết Nối & Đa Dạng Hóa</span>
+                        <div class="h-[1px] flex-grow bg-gradient-to-r from-cyber-cyan/40 to-transparent"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+                        <!-- Node 1 -->
+                        <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-cyber-cyan border-slate-800 relative group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center text-cyber-cyan text-xl shrink-0 font-orbitron font-bold">
+                                    01
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="font-orbitron font-bold text-white text-base">1. Kết Nối Nhanh Chóng</h3>
+                                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyber-cyan"><i class="fa-solid fa-bolt"></i> NODE 01</span>
+                                    </div>
+                                    <p class="text-slate-300 text-sm leading-relaxed">
+                                        Rút ngắn khoảng cách không gian & thời gian, thiết lập hạ tầng truyền tải thông tin tốc độ cao.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Sợi dây liên kết sang Node 2 -->
+                            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                                <span class="text-cyber-cyan font-mono text-[11px]"><i class="fa-solid fa-diagram-next mr-1"></i> Liên kết truyền tới Node 02:</span>
+                                <span class="text-slate-300 font-medium">Truy cập kho dữ liệu khổng lồ <i class="fa-solid fa-right-long text-cyber-cyan ml-1"></i></span>
+                            </div>
+                        </div>
+
+                        <!-- Node 2 -->
+                        <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-cyber-cyan border-slate-800 relative group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center text-cyber-cyan text-xl shrink-0 font-orbitron font-bold">
+                                    02
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="font-orbitron font-bold text-white text-base">2. Đa Dạng Tài Nguyên</h3>
+                                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyber-cyan"><i class="fa-solid fa-cubes"></i> NODE 02</span>
+                                    </div>
+                                    <p class="text-slate-300 text-sm leading-relaxed">
+                                        Cung cấp kho tri thức số phong phú, đám mây lưu trữ và thư viện công cụ hỗ trợ toàn cầu.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Sợi dây liên kết chuyển tầng -->
+                            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                                <span class="text-cyber-cyan font-mono text-[11px]"><i class="fa-solid fa-diagram-next mr-1"></i> Liên kết tầng tiếp theo:</span>
+                                <span class="text-slate-300 font-medium">Nguồn dữ liệu cho Học tập & Làm việc <i class="fa-solid fa-arrow-down-long text-cyber-cyan ml-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DÂY KẾT NỐI GIỮA TẦNG 1 VÀ TẦNG 2 -->
+                <div class="flex justify-center items-center gap-4 py-1">
+                    <div class="h-[1px] w-1/4 bg-gradient-to-r from-transparent via-cyber-purple/50 to-transparent"></div>
+                    <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-cyber-purple/10 border border-cyber-purple/30 text-cyber-purple text-xs font-mono">
+                        <i class="fa-solid fa-arrows-split-up-and-left rotate-180"></i> Dòng Truyền Dữ Liệu
+                    </div>
+                    <div class="h-[1px] w-1/4 bg-gradient-to-r from-transparent via-cyber-purple/50 to-transparent"></div>
+                </div>
+
+                <!-- TẦNG 2: PHÁT TRIỂN & TỐI ƯU (Nodes 3, 4, 5) -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-xs font-mono text-cyber-purple uppercase tracking-widest">
+                        <span class="px-2 py-0.5 rounded bg-cyber-purple/10 border border-cyber-purple/30">Giai Đoạn 02</span>
+                        <span>Nâng Cao Năng Lực & Tối Ưu Hóa Chi Phí</span>
+                        <div class="h-[1px] flex-grow bg-gradient-to-r from-cyber-purple/40 to-transparent"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Node 3 -->
+                        <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-cyber-purple border-slate-800 relative group">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-10 h-10 rounded-lg bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center text-cyber-purple text-lg font-orbitron font-bold">
+                                        03
+                                    </div>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyber-purple">NODE 03</span>
+                                </div>
+                                <h3 class="font-orbitron font-bold text-white text-base">3. Học Tập Hiệu Quả</h3>
+                                <p class="text-slate-300 text-xs leading-relaxed">
+                                    Cá nhân hóa lộ trình tiếp thu tri thức nhờ các nền tảng E-learning và công nghệ AI.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-cyber-purple font-mono flex items-center justify-between">
+                                <span><i class="fa-solid fa-link mr-1"></i> Tương tác ➔ Node 04</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- Node 4 -->
+                        <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-cyber-purple border-slate-800 relative group">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-10 h-10 rounded-lg bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center text-cyber-purple text-lg font-orbitron font-bold">
+                                        04
+                                    </div>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyber-purple">NODE 04</span>
+                                </div>
+                                <h3 class="font-orbitron font-bold text-white text-base">4. Làm Việc Thông Minh</h3>
+                                <p class="text-slate-300 text-xs leading-relaxed">
+                                    Tự động hóa quy trình lặp lại, tối ưu hóa sự cộng tác nhóm theo thời gian thực.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-cyber-purple font-mono flex items-center justify-between">
+                                <span><i class="fa-solid fa-link mr-1"></i> Tương tác ➔ Node 05</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- Node 5 -->
+                        <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-cyber-purple border-slate-800 relative group">
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-10 h-10 rounded-lg bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center text-cyber-purple text-lg font-orbitron font-bold">
+                                        05
+                                    </div>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyber-purple">NODE 05</span>
+                                </div>
+                                <h3 class="font-orbitron font-bold text-white text-base">5. Tiết Kiệm Chi Phí</h3>
+                                <p class="text-slate-300 text-xs leading-relaxed">
+                                    Cắt giảm chi phí vận hành, tiết kiệm thời gian và nguồn lực nhờ chuyển đổi số.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-cyber-purple font-mono flex items-center justify-between">
+                                <span><i class="fa-solid fa-link mr-1"></i> Chuyển tiếp ➔ Giai Đoạn 3</span>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DÂY KẾT NỐI GIỮA TẦNG 2 VÀ TẦNG 3 -->
+                <div class="flex justify-center items-center gap-4 py-1">
+                    <div class="h-[1px] w-1/4 bg-gradient-to-r from-transparent via-cyber-pink/50 to-transparent"></div>
+                    <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-cyber-pink/10 border border-cyber-pink/30 text-cyber-pink text-xs font-mono">
+                        <i class="fa-solid fa-network-wired"></i> Bứt Phá Sáng Tạo
+                    </div>
+                    <div class="h-[1px] w-1/4 bg-gradient-to-r from-transparent via-cyber-pink/50 to-transparent"></div>
+                </div>
+
+                <!-- TẦNG 3: ĐỘT PHÁ SÁNG TẠO & MỞ RA TƯƠNG LAI (Nodes 6, 7) -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-xs font-mono text-cyber-pink uppercase tracking-widest">
+                        <span class="px-2 py-0.5 rounded bg-cyber-pink/10 border border-cyber-pink/30">Giai Đoạn 03</span>
+                        <span>Đột Phá Sáng Tạo & Mở Rộng Tương Lai</span>
+                        <div class="h-[1px] flex-grow bg-gradient-to-r from-cyber-pink/40 to-transparent"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Node 6 -->
+                        <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-cyber-pink border-slate-800 relative group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-cyber-pink/10 border border-cyber-pink/30 flex items-center justify-center text-cyber-pink text-xl shrink-0 font-orbitron font-bold">
+                                    06
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="font-orbitron font-bold text-white text-base">6. Thúc Đẩy Sáng Tạo</h3>
+                                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyber-pink"><i class="fa-solid fa-lightbulb"></i> NODE 06</span>
+                                    </div>
+                                    <p class="text-slate-300 text-sm leading-relaxed">
+                                        Khai phá các ý tưởng đột phá, công cụ đa phương tiện giúp hiện thực hóa sáng kiến số.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Sợi dây liên kết sang Node 7 -->
+                            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                                <span class="text-cyber-pink font-mono text-[11px]"><i class="fa-solid fa-diagram-next mr-1"></i> Đích đến cuối cùng:</span>
+                                <span class="text-slate-300 font-medium">Mở ra cánh cửa tương lai <i class="fa-solid fa-right-long text-cyber-pink ml-1"></i></span>
+                            </div>
+                        </div>
+
+                        <!-- Node 7 -->
+                        <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-cyber-pink border-slate-800 relative group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-cyber-pink/10 border border-cyber-pink/30 flex items-center justify-center text-cyber-pink text-xl shrink-0 font-orbitron font-bold">
+                                    07
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="font-orbitron font-bold text-white text-base">7. Mở Ra Nhiều Cơ Hội Mới</h3>
+                                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyber-pink"><i class="fa-solid fa-rocket"></i> FINAL NODE</span>
+                                    </div>
+                                    <p class="text-slate-300 text-sm leading-relaxed">
+                                        Tạo dựng ngành nghề mới, nâng cao năng lực hội nhập và mở rộng không gian phát triển toàn cầu.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                                <span class="text-cyber-pink font-mono text-[11px]"><i class="fa-solid fa-award mr-1"></i> Sứ mệnh Triệu Bảo:</span>
+                                <span class="text-cyber-pink font-semibold">Hoàn tất chuỗi giá trị số</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tổng Kết Sơ Đồ -->
+            <div class="p-6 rounded-2xl bg-gradient-to-r from-cyber-cyan/10 via-cyber-purple/10 to-cyber-pink/10 border border-cyber-cyan/30 text-center relative overflow-hidden">
+                <div class="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+                    <div class="space-y-1">
+                        <span class="text-xs font-mono text-cyber-cyan uppercase tracking-wider"><i class="fa-solid fa-circle-check mr-1"></i> TỔNG QUAN HỆ THỐNG TRIỆU BẢO</span>
+                        <h4 class="font-orbitron text-lg font-bold text-white">Mạng Lưới Tương Tác Chuẩn Hóa 1 ➔ 7</h4>
+                        <p class="text-slate-300 text-xs sm:text-sm">Bắt đầu từ **1. Kết nối nhanh** ➔ **2. Đa dạng tài nguyên** ➔ **3. Học tập** ➔ **4. Làm việc** ➔ **5. Tiết kiệm chi phí** ➔ **6. Sáng tạo** ➔ **7. Tương lai bứt phá**.</p>
+                    </div>
+                    <a href="#video" class="shrink-0 px-5 py-2.5 rounded-xl text-xs font-orbitron font-semibold bg-gradient-to-r from-cyber-cyan to-cyber-purple text-black hover:opacity-90 transition-all shadow-[0_0_15px_rgba(0,240,255,0.4)]">
+                        Khám Phá Video <i class="fa-solid fa-arrow-down ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+        </section>
 
         <!-- ===== KHU VỰC 1: INFOGRAPHIC SHOWCASE ===== -->
         <section id="infographic" class="scroll-mt-24 space-y-6">
@@ -193,12 +463,11 @@
                     <h2 class="font-orbitron text-2xl font-bold text-white flex items-center gap-3">
                         <i class="fa-solid fa-chart-pie text-cyber-cyan"></i> Infographic Showcase
                     </h2>
-                    <p class="text-slate-400 text-xs mt-1">Xem chi tiết thiết kế trực quan</p>
+                    <p class="text-slate-400 text-xs mt-1">Thiết kế đồ họa hiển thị dữ liệu trực quan</p>
                 </div>
 
-                <!-- Controls: Phóng to -->
                 <div class="flex items-center gap-3">
-                    <button onclick="openModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-cyber-cyan/10 hover:bg-cyber-cyan/20 text-cyber-cyan border border-cyber-cyan/30 transition-all flex items-center gap-2 cyber-btn">
+                    <button onclick="openModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-cyber-cyan/10 hover:bg-cyber-cyan/20 text-cyber-cyan border border-cyber-cyan/30 transition-all flex items-center gap-2">
                         <i class="fa-solid fa-expand"></i> Phóng to
                     </button>
                 </div>
@@ -207,23 +476,20 @@
             <!-- Infographic Card Display -->
             <div class="glass-card glass-card-hover rounded-2xl p-4 sm:p-6 relative overflow-hidden">
                 <div class="relative w-full rounded-xl overflow-hidden bg-slate-950/80 flex items-center justify-center min-h-[350px] sm:min-h-[500px] border border-slate-800">
-                    
-                    <!-- ⭐️ [ĐIỂM CHỈNH SỬA 1]: LINK ẢNH INFOGRAPHIC -->
                     <img id="infographic-img" 
                          src="https://i.postimg.cc/MpM703Hh/Lab05-Ex2-1-png.png" 
                          alt="Infographic Showcase" 
                          class="w-full h-auto max-h-[800px] object-contain rounded-lg transition-transform duration-500 hover:scale-[1.01] cursor-pointer"
                          onclick="openModal()">
 
-                    <!-- Watermark Overlay Badge -->
                     <div class="absolute bottom-4 right-4 bg-slate-900/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-700/60 text-[11px] font-mono text-slate-300 flex items-center gap-2 pointer-events-none">
                         <i class="fa-solid fa-shield-halved text-cyber-cyan"></i> High Resolution Render
                     </div>
                 </div>
 
                 <div class="mt-4 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
-                    <span id="img-filename" class="font-mono text-slate-300"><i class="fa-solid fa-file-image mr-1 text-cyber-cyan"></i> infographic_default_render.png</span>
-                    <span class="text-slate-500">Mẹo: Bạn có thể nhấp vào ảnh hoặc bấm "Phóng to" để xem kích thước đầy đủ.</span>
+                    <span class="font-mono text-slate-300"><i class="fa-solid fa-file-image mr-1 text-cyber-cyan"></i> trieubao_infographic_render.png</span>
+                    <span class="text-slate-500">Mẹo: Bấm vào ảnh để xem full màn hình.</span>
                 </div>
             </div>
         </section>
@@ -235,113 +501,30 @@
                     <h2 class="font-orbitron text-2xl font-bold text-white flex items-center gap-3">
                         <i class="fa-brands fa-youtube text-cyber-purple"></i> Video Presentation
                     </h2>
-                    <p class="text-slate-400 text-xs mt-1">Trình chiếu Video thuyết minh hoặc tài liệu liên quan</p>
+                    <p class="text-slate-400 text-xs mt-1">Trình chiếu Video thuyết minh liên quan</p>
                 </div>
             </div>
 
-            <!-- YouTube Iframe Container (Responsive 16:9) -->
             <div class="neon-border rounded-2xl overflow-hidden glass-card">
                 <div class="relative w-full pb-[56.25%] h-0 bg-slate-950">
-                    
-                    <!-- ⭐️ [ĐIỂM CHỈNH SỬA 2]: ID VIDEO YOUTUBE -->
-                    <iframe id="youtube-iframe" 
-                            class="absolute top-0 left-0 w-full h-full rounded-2xl border-0" 
-                            src="https://www.youtube.com/embed/MsJnSac0UUk?rel=0&modestbranding=1" 
-                            title="YouTube Video Player" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    <iframe id="youtube-iframe"
+                            class="youtube-embed rounded-2xl"
+                            src="https://www.youtube-nocookie.com/embed/MsJnSac0UUk?rel=0&modestbranding=1&playsinline=1"
+                            title="YouTube Video Player"
+                            loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>
                     </iframe>
-
                 </div>
             </div>
         </section>
-
-        <!-- =================================================================== -->
-        <!-- ===== BẮT ĐẦU: ⭐️ [ĐIỂM CHỈNH SỬA 3]: THÔNG TIN TÁC GIẢ ===== -->
-        <!-- =================================================================== -->
-        <section id="author" class="scroll-mt-24">
-            <div class="glass-card glass-card-hover rounded-3xl p-6 sm:p-10 relative overflow-hidden border border-cyber-cyan/25">
-                
-                <!-- Background Accent Glow -->
-                <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-cyber-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
-
-                <div class="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10">
-                    
-                    <!-- Avatar với hiệu ứng Hover phóng tốc độ & Phát sáng mạnh hơn -->
-                    <div class="relative group shrink-0 cursor-pointer">
-                        <div class="absolute -inset-1.5 bg-gradient-to-r from-cyber-cyan via-cyber-purple to-cyber-pink rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse-glow"></div>
-                        
-                        <!-- CHỈNH SỬA: Link ảnh Avatar của bạn tại src bên dưới -->
-                        <img id="author-avatar" 
-                             src="https://i.postimg.cc/bvNfZnmN/1790696993417-404132717168675234-g6461722428921717397-102bfdee7f23c3e6ec5e6d9c28125398.jpg" 
-                             alt="Author Avatar" 
-                             class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover border-2 border-slate-900 shadow-2xl transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1">
-                        
-                        <!-- Status Badge -->
-                        <div class="absolute bottom-2 right-2 bg-slate-900 border border-cyber-cyan/50 text-cyber-cyan text-[10px] font-mono px-2 py-0.5 rounded-full flex items-center gap-1 shadow-md">
-                            <span class="w-1.5 h-1.5 rounded-full bg-cyber-cyan animate-ping"></span> ONLINE
-                        </div>
-                    </div>
-
-                    <!-- Nội Dung Chi Tiết Tác Giả -->
-                    <div class="space-y-4 text-center md:text-left flex-grow">
-                        <div>
-                            <!-- CHỈNH SỬA: Tên tác giả -->
-                            <h3 class="font-orbitron text-2xl sm:text-3xl font-extrabold text-white tracking-wide">
-                                TRIỆU BẢO
-                            </h3>
-                            <!-- CHỈNH SỬA: Danh xưng / Chức danh -->
-                            <p class="text-cyber-cyan font-mono text-xs sm:text-sm font-medium mt-1">
-                                Trí Tuệ Nhân Tạo A1 - K52
-                            </p>
-                        </div>
-
-                        <!-- CHỈNH SỬA: Đoạn Mô Tả Tác Giả -->
-                        <p class="text-slate-300 text-sm leading-relaxed max-w-2xl">
-                            Xin chào! Mình là Võ Triệu Bảo, là sinh viên ngành Trí Tuệ Nhân Tạo, khóa 52, Đại học Cần Thơ
-                        </p>
-
-                        <!-- CHỈNH SỬA: Kỹ Năng / Tags -->
-                        <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 pt-1">
-                            <span class="px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-cyber-cyan/15 border border-slate-700/60 hover:border-cyber-cyan/50 text-slate-300 hover:text-cyber-cyan text-xs font-mono transition-all cursor-default">📲 0972.771.xxx</span>
-                            <span class="px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-cyber-purple/15 border border-slate-700/60 hover:border-cyber-purple/50 text-slate-300 hover:text-cyber-purple text-xs font-mono transition-all cursor-default">📍Thành phố Cần Thơ</span>
-                            <span class="px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-cyber-cyan/15 border border-slate-700/60 hover:border-cyber-cyan/50 text-slate-300 hover:text-cyber-cyan text-xs font-mono transition-all cursor-default">✏️ Đại học Cần Thơ</span>
-                            <span class="px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-cyber-pink/15 border border-slate-700/60 hover:border-cyber-pink/50 text-slate-300 hover:text-cyber-pink text-xs font-mono transition-all cursor-default">🤖 Trí Tuệ Nhân Tạo</span>
-                        </div>
-
-                        <!-- CHỈNH SỬA: Các Liên Kết Mạng Xã Hội -->
-                        <div class="pt-3 flex items-center justify-center md:justify-start gap-3">
-                            <a href="https://www.facebook.com/share/18Hs6fNvo6/" target="_blank" title="Facebook" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-cyber-cyan hover:text-black border border-slate-700 hover:border-cyber-cyan text-slate-300 flex items-center justify-center transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(0,240,255,0.6)]">
-                                <i class="fa-brands fa-facebook-f text-sm"></i>
-                            </a>
-                            <a href="https://github.com/Trieubao1908" target="_blank" title="GitHub" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-cyber-purple hover:text-black border border-slate-700 hover:border-cyber-purple text-slate-300 flex items-center justify-center transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(168,85,247,0.6)]">
-                                <i class="fa-brands fa-github text-sm"></i>
-                            </a>
-                            <a href="https://instagram.com/wfrju.baoz_" target="_blank"
-title="Instagram" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-cyber-pink
-hover:text-black border border-slate-700 hover:border-cyber-pink text-slate-300 flex
-items-center justify-center transition-all duration-300 transform hover:-translate-y-1
-hover:shadow-[0_0_15px_rgba(236,72,153,0.6)]">
-    <i class="fa-brands fa-instagram text-sm"></i>
-</a>
-                            <a href="mailto:votrieubao2008@gmail.com
-" title="Email" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-cyber-pink hover:text-black border border-slate-700 hover:border-cyber-pink text-slate-300 flex items-center justify-center transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(236,72,153,0.6)]">
-                                <i class="fa-solid fa-envelope text-sm"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- =================================================================== -->
-        <!-- ===== KẾT THÚC: THÔNG TIN TÁC GIẢ =============================== -->
-        <!-- =================================================================== -->
 
     </main>
 
-    <!-- Lightbox Modal for Infographic Zoom -->
+    <!-- Lightbox Modal -->
     <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8" onclick="closeModal()">
-        <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-3xl font-bold z-50 p-2 focus:outline-none transition-transform hover:scale-110">
+        <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-3xl font-bold z-50 p-2 focus:outline-none">
             <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="max-w-6xl max-h-[90vh] overflow-auto rounded-xl border border-slate-700 shadow-2xl" onclick="event.stopPropagation()">
@@ -354,14 +537,12 @@ hover:shadow-[0_0_15px_rgba(236,72,153,0.6)]">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
             
             <div class="flex items-center gap-2 font-orbitron text-slate-300">
-                <i class="fa-solid fa-terminal text-cyber-cyan"></i>
-                <span>TRIỆU BẢO SYSTEM</span>
+                <i class="fa-solid fa-microchip text-cyber-cyan"></i>
+                <span>TRIỆU BẢO ECOSYSTEM</span>
             </div>
 
-            <!-- BẢN QUYỀN VÀ DÒNG CHỮ NGUỒN THUỘC VỀ GEMINI -->
             <div class="text-center font-mono text-slate-400 space-y-1">
-                <div>&copy; <span id="current-year"></span> <span class="text-slate-200 font-semibold">Triệu Bảo</span>. Tất cả quyền được bảo lưu. Designed for Futuristic Web.</div>
-                <div class="text-cyber-cyan text-[11px] font-semibold tracking-wide">Nguồn thuộc về Gemini</div>
+                <div>&copy; <span id="current-year"></span> Triệu Bảo. All rights reserved.</div>
             </div>
 
             <div class="flex items-center gap-4 text-slate-500">
@@ -372,12 +553,10 @@ hover:shadow-[0_0_15px_rgba(236,72,153,0.6)]">
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT LOGIC ===== -->
+    <!-- JavaScript Logic -->
     <script>
-        // Set current year in footer automatically
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // 1. Open / Close Fullscreen Modal
         function openModal() {
             const currentSrc = document.getElementById('infographic-img').src;
             document.getElementById('modal-img').src = currentSrc;
@@ -392,11 +571,8 @@ hover:shadow-[0_0_15px_rgba(236,72,153,0.6)]">
             document.body.style.overflow = 'auto';
         }
 
-        // Close Modal on ESC key
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
+            if (event.key === 'Escape') closeModal();
         });
     </script>
 </body>
